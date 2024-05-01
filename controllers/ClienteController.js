@@ -51,7 +51,7 @@ exports.eliminarClientes = async (req, res) => {
 }
 exports.modificarCliente = async (req, res) => {
     try {
-        let cliente = await Cliente.findByIdAndUpdate(req.params.id, re.body,{new: true});
+        let cliente = await Cliente.findByIdAndUpdate(req.params.id, req.body,{new: true});
         if (!cliente) {
             return res.status(404).send({msg: "El cliente no existe"});
         }
